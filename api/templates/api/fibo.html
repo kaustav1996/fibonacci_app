@@ -1,0 +1,91 @@
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 20px;
+}
+body {
+  background-color: #222;
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #efefef;
+  font-size: 1rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5em;
+  padding: 0;
+}
+input:focus {
+  outline: none;
+  color: #ac1d1c;
+  border-color: currentcolor;
+}
+.input {
+  border-bottom: 2px solid #efefef;
+  color: #efefef;
+  font-weight: 700;
+}
+.output {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  word-wrap: break-word;
+  line-height: 1;
+  margin-top: 3rem;
+  width: 100%;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+</style>
+<html>
+  <head>
+  <title>Caller Hub Assignment: Fibonacci</title>
+</head>
+<body>
+  <p>
+    Input Number: <br>
+      {% csrf_token %}
+      <!-- <input class="input js-input" type="text"
+      name="n" id="n" 
+      autofocus /> -->
+      <!-- <form action="/api/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+      </form> -->
+      
+      <form id=action="/api/" method="post">
+        <input id="n" type="number" min="0" max="3000" name="n" class="input">
+    </form>
+    
+    <br> 
+    {% if reqTime %}
+        <p id="time"></p>
+      {% endif %}
+    {% if n %}
+    Fibonacci({{ n }}) =
+    {% endif %}
+</p>
+<div class="output" >{{ result }}</div>
+
+<script>
+var respTime = new Date().getTime();
+var reqTime = "{{ reqTime }}";
+document.getElementById("time").innerHTML = "Time to respond: "+Math.abs( parseInt(respTime) - parseInt(reqTime)).toString()+" ms" ;
+</script>
+</body>
