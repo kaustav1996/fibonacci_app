@@ -1,6 +1,6 @@
 # FIBONACCI APP
 
-## hosted on : HeRoKu [https://desolate-plateau-65596.herokuapp.com/]
+## hosted on : HeRoKu [https://callerhub-fibonacci.herokuapp.com/]
 
 ### Optimisation
 
